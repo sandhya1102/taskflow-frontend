@@ -1,0 +1,63 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Dashboard from "./pages/Dashboard";
+import Settings from "./pages/Settings";
+import PendingPage from "./pages/PendingPage";
+import CompletedPage from "./pages/CompletedPage";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <ProtectedRoutes>
+        <Dashboard />
+      </ProtectedRoutes>
+    ),
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/settings",
+    element: (
+      <ProtectedRoutes>
+        <Settings />
+      </ProtectedRoutes>
+    ),
+  },
+  {
+    path: "/pendingPage",
+    element: (
+      <ProtectedRoutes>
+        <PendingPage />
+      </ProtectedRoutes>
+    ),
+  },
+  {
+    path: "/completedPage",
+    element: (
+      <ProtectedRoutes>
+        <CompletedPage />
+      </ProtectedRoutes>
+    ),
+  },
+]);
+
+function App() {
+
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  )
+}
+
+export default App
