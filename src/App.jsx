@@ -6,6 +6,9 @@ import Settings from "./pages/Settings";
 import PendingPage from "./pages/PendingPage";
 import CompletedPage from "./pages/CompletedPage";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { loadUser } from "./redux/authSlice";
 
 
 const router = createBrowserRouter([
@@ -52,6 +55,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(loadUser())
+  },[])
 
   return (
     <>
