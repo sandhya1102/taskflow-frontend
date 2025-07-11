@@ -48,7 +48,7 @@ const CreateTaskForm = ({ onClose }) => {
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/50 backdrop-blur-2xl">
-        <div className="bg-white p-6 lg:w-full lg:max-w-md rounded-xl shadow-xl w-[300px]">
+        <div className="bg-white p-6 lg:w-full lg:max-w-md rounded-xl shadow-xl w-[300px] mt-12">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold flex items-center gap-2">
